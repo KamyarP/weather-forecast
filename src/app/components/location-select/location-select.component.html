@@ -1,0 +1,12 @@
+<div *ngIf="error | async as error">
+  <p style="color: red"><mat-icon>error</mat-icon> {{ error }}</p>
+</div>
+<input
+  type="text"
+  class="form-control"
+  id="txtCityName"
+  name="txtSearchPlaces"
+  #txtCityName
+  [(ngModel)]="citySelectInput"
+  placeholder="Enter city name"
+/>

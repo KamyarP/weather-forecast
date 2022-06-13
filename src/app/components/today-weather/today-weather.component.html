@@ -1,0 +1,24 @@
+<ng-container *ngIf="data | async as data">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Today ({{ todayText }}) </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="data" id="todayTable">
+        <ng-container matColumnDef="Time">
+          <th mat-header-cell *matHeaderCellDef>Time</th>
+          <td mat-cell *matCellDef="let f">{{ f.date.getHours() }}:00</td>
+        </ng-container>
+        <ng-container matColumnDef="Temp">
+          <th mat-header-cell *matHeaderCellDef>Temp</th>
+          <td mat-cell *matCellDef="let f">{{ f.temp }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columns"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+<ng-container *ngIf="isLoading | async as isLoading">
+  <mat-spinner></mat-spinner>
+</ng-container>

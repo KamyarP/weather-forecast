@@ -1,0 +1,9 @@
+#fiveDayWrapper {
+    height: 52em;
+    overflow: auto;
+  }
+  
+#fiveDayTable{
+    width: 500px;
+    height: 100%;
+}
